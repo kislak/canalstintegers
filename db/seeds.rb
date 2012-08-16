@@ -18,7 +18,7 @@ File.open('config/twitter_celebs.txt').each do |celeb|
       :origin => 'twitter',
       :origin_url => url
     )
-    csi.id #likewise, need to set id seperately here
+    csi.id = t.id #likewise, need to set id seperately here
     csi.save!
   end
 end
