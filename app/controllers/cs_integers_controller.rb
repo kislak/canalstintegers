@@ -23,6 +23,7 @@ class CsIntegersController < ApplicationController
 
   # GET /cs_integers/new
   # GET /cs_integers/new.json
+  #TODO: disable me once buttons are working
   def new
     @cs_integer = CsInteger.random
 
@@ -39,19 +40,14 @@ class CsIntegersController < ApplicationController
 
   # POST /cs_integers
   # POST /cs_integers.json
-  # def create
-  #   @cs_integer = CsInteger.new(params[:cs_integer])
+  def create
+    @cs_integer = CsInteger.random
 
-  #   respond_to do |format|
-  #     if @cs_integer.save
-  #       format.html { redirect_to @cs_integer, notice: 'Cs integer was successfully created.' }
-  #       format.json { render json: @cs_integer, status: :created, location: @cs_integer }
-  #     else
-  #       format.html { render action: "new" }
-  #       format.json { render json: @cs_integer.errors, status: :unprocessable_entity }
-  #     end
-  #   end
-  # end
+    respond_to do |format|
+      format.html { redirect_to @cs_integer, notice: 'You have been issued an integer!' }
+      format.json { render json: @cs_integer, status: :created, location: @cs_integer }
+    end
+  end
 
   # PUT /cs_integers/1
   # PUT /cs_integers/1.json
