@@ -15,7 +15,7 @@ File.open('config/twitter_celebs.txt').each do |celeb|
     csi = CsInteger.new( 
       :celebrity_name => t.user.name,
       :celebrity_screen_name => t.user.screen_name,
-      :origin => 'twitter',
+      :origin => 'Twitter',
       :origin_url => url
     )
     csi.id = t.id #likewise, need to set id seperately here
