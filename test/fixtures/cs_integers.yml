@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  celebrity_name: MyString
+  celebrity_screen_name: MyString
+  origin: MyString
+  origin_url: MyString
+
+two:
+  celebrity_name: MyString
+  celebrity_screen_name: MyString
+  origin: MyString
+  origin_url: MyString

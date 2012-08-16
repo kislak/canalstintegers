@@ -1,0 +1,2 @@
+module CsIntegersHelper
+end

@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Celebrity name:</b>
+  <%= @cs_integer.celebrity_name %>
+</p>
+
+<p>
+  <b>Celebrity screen name:</b>
+  <%= @cs_integer.celebrity_screen_name %>
+</p>
+
+<p>
+  <b>Origin:</b>
+  <%= @cs_integer.origin %>
+</p>
+
+<p>
+  <b>Origin url:</b>
+  <%= @cs_integer.origin_url %>
+</p>
+
+
+<%= link_to 'Edit', edit_cs_integer_path(@cs_integer) %> |
+<%= link_to 'Back', cs_integers_path %>
