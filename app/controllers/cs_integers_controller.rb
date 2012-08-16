@@ -21,18 +21,6 @@ class CsIntegersController < ApplicationController
     end
   end
 
-  # GET /cs_integers/new
-  # GET /cs_integers/new.json
-  #TODO: disable me once buttons are working
-  def new
-    @cs_integer = CsInteger.random
-
-    respond_to do |format|
-      format.html { redirect_to @cs_integer, notice: 'You have been issued an integer!' }
-      format.json { render json: @cs_integer, status: :created, location: @cs_integer }
-    end
-  end
-
   # GET /cs_integers/1/edit
   # def edit
   #   @cs_integer = CsInteger.find(params[:id])
@@ -49,31 +37,5 @@ class CsIntegersController < ApplicationController
     end
   end
 
-  # PUT /cs_integers/1
-  # PUT /cs_integers/1.json
-  # def update
-  #   @cs_integer = CsInteger.find(params[:id])
 
-  #   respond_to do |format|
-  #     if @cs_integer.update_attributes(params[:cs_integer])
-  #       format.html { redirect_to @cs_integer, notice: 'Cs integer was successfully updated.' }
-  #       format.json { head :no_content }
-  #     else
-  #       format.html { render action: "edit" }
-  #       format.json { render json: @cs_integer.errors, status: :unprocessable_entity }
-  #     end
-  #   end
-  # end
-
-  # DELETE /cs_integers/1
-  # DELETE /cs_integers/1.json
-  # def destroy
-  #   @cs_integer = CsInteger.find(params[:id])
-  #   @cs_integer.destroy
-
-  #   respond_to do |format|
-  #     format.html { redirect_to cs_integers_url }
-  #     format.json { head :no_content }
-  #   end
-  # end
 end
