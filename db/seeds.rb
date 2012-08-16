@@ -6,12 +6,12 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-File.open('twitter_celebs.txt').each do |celeb|
+File.open('config/twitter_celebs.txt').each do |celeb|
   Twitter.user_timeline( celeb ).each do |t|
     puts "seeding INTEGER #{t.id} (as used by #{t.user.name} on Twitter)"
     url = "http://twitter.com/#{t.user.screen_name}/status/#{t.id}"
 
-    CSInteger.create( 
+    CsInteger.create( 
       :id => t.id,
       :celebrity_name => t.user.name,
       :celebrity_screen_name => t.user.screen_name,
