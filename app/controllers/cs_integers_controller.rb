@@ -1,4 +1,7 @@
 class CsIntegersController < ApplicationController
+
+  protect_from_forgery :except => :create
+
   # GET /cs_integers
   # GET /cs_integers.json
   def index
