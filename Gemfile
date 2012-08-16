@@ -9,7 +9,7 @@ gem 'sqlite3', :group => :development
 gem 'pg', :group => :production
 
 gem "randumb", "~> 0.3.0"
-
+gem "twitter", "~> 3.6.0"
 
 # Gems used only for assets and not required
 # in production environments by default.
