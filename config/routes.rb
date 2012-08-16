@@ -1,5 +1,5 @@
 Canalstintegers::Application.routes.draw do
-  resources :cs_integers
+  resources :cs_integers, :path => "/integer"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
