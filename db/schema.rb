@@ -13,8 +13,7 @@
 
 ActiveRecord::Schema.define(:version => 20120817201549) do
 
-  create_table "cs_integers", :id => false, :force => true do |t|
-    t.integer  "id"
+  create_table "cs_integers", :force => true do |t|
     t.string   "celebrity_name"
     t.string   "celebrity_screen_name"
     t.string   "origin"

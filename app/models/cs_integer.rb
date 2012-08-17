@@ -5,6 +5,7 @@ class CsInteger < ActiveRecord::Base
   validates :celebrity_screen_name, :presence => true
   validates :origin, :presence => true
   validates :origin_url, :presence => true
+  validates_uniqueness_of :id
 
   def description
     "A [adjective] integer \##{id} as used by #{celebrity_name} on #{origin}"
