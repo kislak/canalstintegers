@@ -1,4 +1,9 @@
 Canalstintegers::Application.routes.draw do
+  # match ':action' => 'static#:action'
+  match 'home' => 'static#home'
+  match 'api' => 'static#api'
+  match 'about' => 'static#about'
+  #match 'create' => 'static#create'
   resources :cs_integers, :path => "/integer"
 
   # The priority is based upon order of creation:
