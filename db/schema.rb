@@ -11,9 +11,10 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120816000049) do
+ActiveRecord::Schema.define(:version => 20120817201549) do
 
-  create_table "cs_integers", :force => true do |t|
+  create_table "cs_integers", :id => false, :force => true do |t|
+    t.integer  "id"
     t.string   "celebrity_name"
     t.string   "celebrity_screen_name"
     t.string   "origin"

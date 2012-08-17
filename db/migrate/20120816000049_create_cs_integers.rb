@@ -6,7 +6,6 @@ class CreateCsIntegers < ActiveRecord::Migration
       t.string :origin
       t.string :origin_url
 
-      t.column :id, :bigint
       t.timestamps
     end
   end
