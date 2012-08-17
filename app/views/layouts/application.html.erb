@@ -7,16 +7,19 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<div id="container">
+  
+  <%= yield %>
 
-<%= yield %>
+  <footer>
+    <ul>
+      <li><%= link_to "home", root_path %></li>
+      <li><%= link_to "about", about_path %></li>
+      <li><%= link_to "api", api_path %></li>
+      <li><%= link_to "create", new_cs_integer_path %></li>
+    <ul>
+  </footer>
 
-<footer>
-  <ul>
-    <li><%= link_to "home", root_path %></li>
-    <li><%= link_to "about", about_path %></li>
-    <li><%= link_to "api", api_path %></li>
-    <li><%= link_to "create", new_cs_integer_path %></li>
-  <ul>
-</footer>
+</div>
 </body>
 </html>
