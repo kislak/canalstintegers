@@ -24,10 +24,9 @@ class CsIntegersController < ApplicationController
     end
   end
 
-  # GET /cs_integers/1/edit
-  # def edit
-  #   @cs_integer = CsInteger.find(params[:id])
-  # end
+  # GET /cs_integers/new
+  def new
+  end
 
   # POST /cs_integers
   # POST /cs_integers.json
