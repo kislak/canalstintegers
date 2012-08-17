@@ -5,7 +5,7 @@ class CsIntegersController < ApplicationController
   # GET /cs_integers
   # GET /cs_integers.json
   def index
-    @cs_integers = CsInteger.all
+    # @cs_integers = CsInteger.all
 
     respond_to do |format|
       format.html # index.html.erb
