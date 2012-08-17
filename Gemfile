@@ -13,6 +13,8 @@ gem "twitter", "~> 3.6.0"
 
 group :development do
   gem 'quiet_assets'
+  gem 'heroku'
+  gem 'taps'
 end
 
 # Gems used only for assets and not required
