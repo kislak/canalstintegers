@@ -11,6 +11,7 @@ gem 'pg', :group => :production
 
 gem "randumb", "~> 0.3.0"
 gem "twitter", "~> 3.6.0"
+gem "acts_as_api"
 
 group :development do
   gem 'quiet_assets'

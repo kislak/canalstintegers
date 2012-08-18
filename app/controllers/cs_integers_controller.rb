@@ -6,7 +6,7 @@ class CsIntegersController < ApplicationController
   # GET /cs_integers.json
   def index
     # @cs_integers = CsInteger.all
-
+    #TODO: BLOW ME UP?!
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @cs_integers }
@@ -20,7 +20,8 @@ class CsIntegersController < ApplicationController
 
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render json: @cs_integer }
+      format.json { render_for_api :basic_info, :json => @cs_integer }
+      format.xml  { render_for_api :basic_info, :xml  => @cs_integer }
     end
   end
 
@@ -35,7 +36,8 @@ class CsIntegersController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to @cs_integer, notice: 'You have been issued an integer!' }
-      format.json { render json: @cs_integer, status: :created, location: @cs_integer }
+      format.json { render_for_api :basic_info, :json => @cs_integer, status: :created, location: @cs_integer }
+      format.xml  { render_for_api :basic_info, :xml  => @cs_integer, status: :created, location: @cs_integer }
     end
   end
 
