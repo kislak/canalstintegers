@@ -4,7 +4,7 @@
 
 <h2>API Methods</h2>
 <h3>New Integer</h3>
-<p>To get a new integer, simply send a <code>POST</code> request to <code>/integer</code>, with a <code>format</code> parameter:</p>
+<p>To get a new CSInteger, simply send a <code>POST</code> request to <code>/integer</code>, with a <code>format</code> parameter:</p>
 
 <pre>curl -v -X POST -d format=json http://<%= request.host_with_port -%>/integer</pre>
 
@@ -25,4 +25,16 @@ Content-Length: 267
 	"origin_url":"http://twitter.com/justdemi/status/203395458457026560",
 	"updated_at":"2012-08-17T22:56:43Z"
 }
+</pre>
+
+<h3>Verify Integer</h3>
+<p>To view the details of an existing CSInteger, send a <code>GET</code> request to <code>/integer/:id(.:format) </code></p>
+<pre>foo</pre>
+<p>The response will contain all the details of the CSInteger:</p>
+<pre>
+	BAR
+</pre>
+<p>Beware of counterfeits! If the id is invalid, you will get the following error message:</p>
+<pre>
+	TODO
 </pre>
