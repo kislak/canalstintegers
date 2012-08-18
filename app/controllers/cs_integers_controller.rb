@@ -4,14 +4,14 @@ class CsIntegersController < ApplicationController
 
   # GET /cs_integers
   # GET /cs_integers.json
-  def index
-    # @cs_integers = CsInteger.all
-    #TODO: BLOW ME UP?!
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @cs_integers }
-    end
-  end
+  # def index
+  #   #@cs_integers = CsInteger.all
+  #   #TODO: BLOW ME UP?!
+  #   respond_to do |format|
+  #     format.html # index.html.erb
+  #     format.json { render json: @cs_integers }
+  #   end
+  # end
 
   # GET /cs_integers/1
   # GET /cs_integers/1.json
