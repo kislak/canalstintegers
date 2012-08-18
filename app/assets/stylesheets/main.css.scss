@@ -12,9 +12,17 @@ body {
 }
 
 .integer {
-  color: darken(brown, 25%);
+  // color: darken(brown, 25%);
   font-size: 3em;
   text-align: center;
+}
+.integer-description {
+  text-align: center;
+}
+
+footer {
+  text-align: center;
+  margin-top: 30px;
 }
 
 /* some stuff from scaffolding below here */

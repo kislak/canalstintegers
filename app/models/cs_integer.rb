@@ -13,17 +13,20 @@ class CsInteger < ActiveRecord::Base
     "A #{adjective} integer \##{id} as used by #{celebrity_name} on #{origin}"
   end
 
+  def adjective
+    words = %w[
+      fashionable
+      trendy
+    ]
+    words.sample
+  end
+
   api_accessible :basic_info do |template|
     template.add :id
     template.add :description
     template.add :celebrity_name
     template.add :celebrity_screen_name
     template.add :origin_url
-  end
-
-  private
-  def adjective
-    "fashionable"
   end
 
 end

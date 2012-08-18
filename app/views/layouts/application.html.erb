@@ -12,12 +12,13 @@
   <%= yield %>
 
   <footer>
-    <ul>
-      <li><%= link_to "home", root_path %></li>
-      <li><%= link_to "about", about_path %></li>
-      <li><%= link_to "api", api_path %></li>
-      <li><%= link_to "create", new_cs_integer_path %></li>
-    <ul>
+    copyright 2012 canal st. integers
+    <nav>
+      <%= link_to "home", root_path %> |
+      <%= link_to "about", about_path %> |
+      <%= link_to "api", api_path %> |
+      <%= link_to "create", new_cs_integer_path %>
+    </nav>
   </footer>
 
 </div>
