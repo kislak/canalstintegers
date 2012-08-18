@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 class CsInteger < ActiveRecord::Base
   acts_as_api
 
@@ -15,10 +17,26 @@ class CsInteger < ActiveRecord::Base
 
   def adjective
     words = %w[
+      contemporary
       fashionable
       trendy
+      très\ chic
+      modern
+      in\ vogue
+      popular
+      swank
+      dapper
+      dashing
+      voguish
+      all-the-rage
+      hot
+      in\ style
+      trendsetting
     ]
-    words.sample
+    #
+    # We seed the prng with id to ensure we always get the same random value for each id!
+    #
+    words.sample(random: Random.new(id))
   end
 
   api_accessible :basic_info do |template|
