@@ -29,5 +29,13 @@ class CsIntegerTest < ActiveSupport::TestCase
     csi_reloaded = CsInteger.find(236137192987193344)
     assert_equal csi_reloaded.id, 236137192987193344
   end
+
+  test "should always return the same adjective for an integer" do
+    csi = CsInteger.first
+    first_adj = csi.adjective
+    5.times do
+      assert_equal first_adj, csi.adjective
+    end
+  end
   
 end
