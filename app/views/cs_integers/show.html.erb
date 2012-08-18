@@ -1,14 +1,20 @@
 <% provide(:title, @cs_integer.id.to_s ) %>
 
+<% if notice %>
 <p id="notice"><%= notice %></p>
+<% end %>
 
-<h1 class="integer"><%= @cs_integer.id %></h1>
+<div class="intdisp">
+  <h1 class="integer"><%= @cs_integer.id %></h1>
 
-<p class="integer-description">
-	A <em><%= @cs_integer.adjective -%></em> integer <em>as used by</em> <a href="<%= @cs_integer.origin_url -%>"><%= @cs_integer.celebrity_name -%> on <%= @cs_integer.origin -%></a>.
-</p>
+  <p class="integer-description">
+  	A <em><%= @cs_integer.adjective -%></em> integer as used by <a href="<%= @cs_integer.origin_url -%>"><%= @cs_integer.celebrity_name -%> on <%= @cs_integer.origin -%></a>.
+  </p>
 
-<div id="tweetbox"></div>
+  <div id="tweetbox"></div>
+
+  <p><%= button_to "Another please", cs_integers_path %></p>
+</div>
 
 <script src="https://api.twitter.com/1/statuses/oembed.json?id=<%= @cs_integer.id -%>&hide_media=true&hide_thread=true&align=center&callback=rendertweet"></script>
 

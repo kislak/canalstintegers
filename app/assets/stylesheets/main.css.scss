@@ -11,12 +11,20 @@ body {
   border: 2px gold solid;
 }
 
+#notice {
+  color: #468847;
+  background-color: #DFF0D8;
+  border: 1px solid #D6E9C6;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+  padding: 10px;
+  margin: -10px -10px 0 -10px;
+}
+
 .integer {
   // color: darken(brown, 25%);
   font-size: 3em;
-  text-align: center;
 }
-.integer-description {
+.intdisp {
   text-align: center;
 }
 
@@ -63,6 +71,4 @@ div {
   }
 }
 
-#notice {
-  color: green;
-}
+
