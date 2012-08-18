@@ -12,18 +12,19 @@
 
 <pre>
 HTTP/1.1 201 Created
-Location: http://<%= request.host_with_port -%>/integer/223659982472757249
+Location: http://<%= request.host_with_port -%>/integer/231461712866459648
 Content-Type: application/json; charset=utf-8
-Content-Length: 267
+Content-Length: 285
 
 {
-	"celebrity_name":"Demi Moore",
-	"celebrity_screen_name":"justdemi",
-	"created_at":"2012-08-17T22:56:43Z",
-	"id":203395458457026560,
-	"origin":"Twitter",
-	"origin_url":"http://twitter.com/justdemi/status/203395458457026560",
-	"updated_at":"2012-08-17T22:56:43Z"
+  "cs_integer":
+  {
+    "id":231461712866459648,
+    "description":"A fashionable integer #231461712866459648 as used by Leonardo DiCaprio on Twitter",
+    "celebrity_name":"Leonardo DiCaprio",
+    "celebrity_screen_name":"LeoDiCaprio",
+    "origin_url":"http://twitter.com/LeoDiCaprio/status/231461712866459648"
+  }
 }
 </pre>
 
@@ -32,9 +33,9 @@ Content-Length: 267
 <pre>foo</pre>
 <p>The response will contain all the details of the CSInteger:</p>
 <pre>
-	BAR
+  BAR
 </pre>
 <p>Beware of counterfeits! If the id is invalid, you will get the following error message:</p>
 <pre>
-	TODO
+  TODO
 </pre>
