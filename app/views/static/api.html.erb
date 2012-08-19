@@ -14,7 +14,6 @@
 HTTP/1.1 201 Created
 Location: http://<%= request.host_with_port -%>/integer/231461712866459648
 Content-Type: application/json; charset=utf-8
-Content-Length: 285
 
 {
   "cs_integer":
@@ -31,10 +30,22 @@ Content-Length: 285
 
 <h3>Verify Integer</h3>
 <p>To view the details of an existing CSInteger, send a <code>GET</code> request to <code>/integer/:id(.:format) </code></p>
-<pre>foo</pre>
+<pre>curl -v http://<%= request.host_with_port -%>/integer/231904517690650624.json</pre>
 <p>The response will contain all the details of the CSInteger:</p>
 <pre>
-  BAR
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+
+{
+  "cs_integer":
+  {
+    "id":231904517690650624,
+    "description":"A dashing integer #231904517690650624 as used by Neil Patrick Harris on Twitter",
+    "celebrity_name":"Neil Patrick Harris",
+    "celebrity_screen_name":"ActuallyNPH",
+    "origin_url":"http://twitter.com/ActuallyNPH/status/231904517690650624"
+  }
+}
 </pre>
 <p>Beware of counterfeits! If the id is invalid, you will get the following error message:</p>
 <pre>
