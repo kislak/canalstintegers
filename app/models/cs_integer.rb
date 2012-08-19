@@ -47,4 +47,40 @@ class CsInteger < ActiveRecord::Base
     template.add :origin_url
   end
 
+  # Safely create a CsInteger from a tweet
+  #
+  # tweet - a Twitter gem Tweet object
+  #
+  # Returns the new CsInteger object
+  def self.create_from_tweet(tweet)
+    twurl = "http://twitter.com/#{tweet.user.screen_name}/status/#{tweet.id}"
+    safe_create(
+      tweet.id,
+      tweet.user.name,
+      tweet.user.screen_name,
+      'Twitter',
+      twurl
+    )
+  end
+
+  def self.safe_create(csid, celebrity_name, celebrity_screen_name, origin, origin_url)
+    if CsInteger.exists? csid
+      raise CsIntegerAlreadyExistsError
+    else
+      # note: don't use #create since id is attr_protected
+      csi = CsInteger.new( 
+        :celebrity_name => celebrity_name,
+        :celebrity_screen_name => celebrity_screen_name,
+        :origin => origin,
+        :origin_url => origin_url
+      )
+      csi.id = csid #likewise, need to set id seperately here
+      csi.save!
+      return csi
+    end
+  end
+
+end
+
+class CsIntegerAlreadyExistsError < Exception
 end
