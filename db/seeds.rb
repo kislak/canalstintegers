@@ -7,11 +7,11 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 File.open('config/twitter_celebs.txt').each do |celeb|
-  begin
-    Twitter.user_timeline( celeb ).each do |t|
+  Twitter.user_timeline( celeb ).each do |t|
+    begin
       CsInteger.ui_create_from_tweet_wrapper(t)
+    rescue Twitter::Error::Unauthorized
+      puts "Got Unauthorized error from twitter trying to read #{celeb}"
     end
-  rescue Twitter::Error::Unauthorized
-    puts "Got Unauthorized error from twitter trying to read #{celeb}"
   end
 end
