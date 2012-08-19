@@ -54,13 +54,15 @@ class CsInteger < ActiveRecord::Base
   #
   # tweet - a Twitter::Tweet object
   #
-  # Returns nothing.
+  # Returns an Integer representing how many CSInts were created (probably 1 or 0).
   def self.ui_create_from_tweet_wrapper(tweet)
     begin
       create_from_tweet(tweet)
       puts "+++ seeded INTEGER #{tweet.id} (as used by #{tweet.user.name} on Twitter)"
+      return 1
     rescue CsIntegerAlreadyExistsError
       puts "--- INTEGER #{tweet.id} (as used by #{tweet.user.name}) already exists"
+      return 0
     end
   end
 

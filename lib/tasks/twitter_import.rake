@@ -2,24 +2,24 @@
 
 require 'twitter'
 
-namespace :twitter do
+namespace :integers do
 
-  desc "Import from twitter to seed the db"
-  task :seed => :environment do
-    File.open('twitter_celebs.txt').each do |celeb|
-      Twitter.user_timeline( celeb ).each do |t|
-        puts "INTEGER #{t.id} (as used by #{t.user.name} on Twitter)"
-        url = "http://twitter.com/#{t.user.screen_name}/status/#{t.id}"
-
-        CSInteger.create( 
-          :id => t.id,
-          :celebrity_name => t.user.name,
-          :celebrity_screen_name => t.user.screen_name,
-          :origin => 'twitter',
-          :origin_url => url
-        )
+  desc "Import at most N=1 entries per celebrity from twitter to the db"
+  task :trickle => :environment do
+    File.open('config/twitter_celebs.txt').each do |celeb|
+      begin
+        Twitter.user_timeline( celeb ).slice(0,1).each do |t|
+          CsInteger.ui_create_from_tweet_wrapper(t)
+        end
+      rescue Twitter::Error::Unauthorized
+        puts "Got Unauthorized error from twitter trying to read #{celeb}"
       end
     end
   end
-  
+
+  desc "Give the current integer count"
+  task :count => :environment do
+    puts CsInteger.count
+  end
+
 end
