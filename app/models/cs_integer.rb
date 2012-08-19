@@ -47,11 +47,29 @@ class CsInteger < ActiveRecord::Base
     template.add :origin_url
   end
 
-  # Safely create a CsInteger from a tweet
+  # Create new integer from a tweet object, automatically handle errors and
+  # log status messages to STDOUT.
   #
-  # tweet - a Twitter gem Tweet object
+  # For when you just don't give a shit!
   #
-  # Returns the new CsInteger object
+  # tweet - a Twitter::Tweet object
+  #
+  # Returns nothing.
+  def self.ui_create_from_tweet_wrapper(tweet)
+    begin
+      create_from_tweet(tweet)
+      puts "+++ seeded INTEGER #{tweet.id} (as used by #{tweet.user.name} on Twitter)"
+    rescue CsIntegerAlreadyExistsError
+      puts "--- INTEGER #{tweet.id} (as used by #{tweet.user.name}) already exists"
+    end
+  end
+
+  # Safely create a CsInteger from a tweet.
+  #
+  # tweet - a Twitter::Tweet object
+  #
+  # Returns the new CsInteger object.
+  # Raises CsIntegerAlreadyExistsError if tweet ID is already taken by a CsInt.
   def self.create_from_tweet(tweet)
     twurl = "http://twitter.com/#{tweet.user.screen_name}/status/#{tweet.id}"
     safe_create(
@@ -63,6 +81,17 @@ class CsInteger < ActiveRecord::Base
     )
   end
 
+  # Create a new CsInteger, basically a replacement for default Create.
+  # Handles all the weird workarounds we're doing to insert AR objects with a custom ID.
+  #
+  # id - the Integer id, must be unique.
+  # celebrity_name - String for the human readable name of celebrity.
+  # celebrity_screen_name - String for the server screen name for celebrity.
+  # origin - String for the social network or service.
+  # origin_url - String representing the URL of the origin source.
+  #
+  # Returns the new CsInteger generated
+  # Raises CsIntegerAlreadyExistsError if a CSInt already exists with that ID.
   def self.safe_create(csid, celebrity_name, celebrity_screen_name, origin, origin_url)
     if CsInteger.exists? csid
       raise CsIntegerAlreadyExistsError
