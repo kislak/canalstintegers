@@ -16,6 +16,11 @@ group :development do
   gem 'taps'
 end
 
+group :test, :development do
+  gem 'rspec-rails'
+  gem 'capybara'
+end
+
 group :production do
   gem 'newrelic_rpm'
 end
