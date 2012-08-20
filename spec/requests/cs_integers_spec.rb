@@ -44,8 +44,8 @@ describe "CsIntegers" do
     end
 
     it "should error if an improper ID" do
-      # get cs_integer_path('xyz123abc')
-      # response.status.should be(404)
+      get cs_integer_path('xyz123abc')
+      response.status.should be(404)
     end
 
   end
