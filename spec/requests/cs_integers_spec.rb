@@ -1,6 +1,8 @@
 require 'spec_helper'
 
 describe "CsIntegers" do
+  csint = FactoryGirl.create(:cs_integer)
+
   describe "GET /integer" do
     it "works! (now write some real specs)" do
       # Run the generator again with the --webrat flag if you want to use webrat methods/matchers
@@ -10,12 +12,7 @@ describe "CsIntegers" do
   end
 
   describe "POST /integer" do
-    fixtures :cs_integers
-
-    it "should load fixtures" do
-      CsInteger.count.should be(2)
-    end
-
+    
     it "should create and redirect on web" do
       post cs_integers_path
       response.status.should be(302)
@@ -30,7 +27,6 @@ describe "CsIntegers" do
   end
 
   describe "GET /integer/:id" do
-    csint = FactoryGirl.create(:cs_integer)
 
     it "should load a page for a proper id" do
       get cs_integer_path(csint)

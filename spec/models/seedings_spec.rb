@@ -3,7 +3,7 @@ require 'spec_helper'
 describe "Seeding database stuff" do
   it "can add a new entry directly from a tweet object" do
     tweet = double("Twitter::Tweet")
-    tweet.stub(:id) { 1 }
+    tweet.stub(:id) { 12345654321 }
     twuser = double("Twitter::User")
     twuser.stub(:name) { "Stuart the Dog" }
     twuser.stub(:screen_name) { "stuartdog" }
