@@ -29,4 +29,29 @@ describe "CsIntegers" do
     end
   end
 
+  describe "GET /integer/:id" do
+    csint = FactoryGirl.create(:cs_integer)
+
+    it "should load a page for a proper id" do
+      get cs_integer_path(csint)
+      response.status.should be(200)
+    end
+
+    it "should provide additional response formats in json and xml" do
+      get cs_integer_path(csint), :format => :json
+      response.status.should be(200)
+      response.content_type.should eq('application/json')
+
+      get cs_integer_path(csint), :format => :xml
+      response.status.should be(200)
+      response.content_type.should eq('application/xml')
+    end
+
+    it "should error if an improper ID" do
+      # get cs_integer_path('xyz123abc')
+      # response.status.should be(404)
+    end
+
+  end
+
 end

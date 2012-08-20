@@ -58,6 +58,11 @@ GEM
     excon (0.16.1)
     execjs (1.4.0)
       multi_json (~> 1.0)
+    factory_girl (4.0.0)
+      activesupport (>= 3.0.0)
+    factory_girl_rails (4.0.0)
+      factory_girl (~> 4.0.0)
+      railties (>= 3.0.0)
     faraday (0.8.4)
       multipart-post (~> 1.1)
     ffi (1.1.5)
@@ -190,6 +195,7 @@ DEPENDENCIES
   acts_as_api
   capybara
   coffee-rails (~> 3.2.1)
+  factory_girl_rails
   heroku
   jquery-rails
   newrelic_rpm
