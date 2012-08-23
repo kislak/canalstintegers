@@ -28,6 +28,18 @@ body {
   text-align: center;
 }
 
+#tweetboxfooter {
+  font-size: 10px;
+  color: grey;
+
+  .int {
+    font-weight: bold;
+  }
+}
+.twitter-tweet-rendered .tw-align-center {
+  margin-bottom: 0 !important;
+}
+
 footer {
   text-align: center;
   margin-top: 30px;

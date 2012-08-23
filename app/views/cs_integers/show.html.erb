@@ -12,6 +12,10 @@
   </p>
 
   <div id="tweetbox"></div>
+  <div id="tweetboxfooter">
+    Guaranteed Authentic&trade;:
+    http://twitter.com/<%= @cs_integer.celebrity_screen_name -%>/status/<span class="int"><%= @cs_integer.id -%></span>
+  </div>
 
   <p><%= button_to "Another please", cs_integers_path %></p>
 </div>
