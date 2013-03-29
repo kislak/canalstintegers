@@ -34,4 +34,7 @@ Canalstintegers::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
+  # don't buffer output when running locally with forman
+  $stdout.sync = true
 end

@@ -1,18 +1,17 @@
 source 'https://rubygems.org'
 
 ruby '1.9.3'
-gem 'rails', '3.2.11'
+gem 'rails', '~> 3.2.11'
 
 gem 'sqlite3', :group => [:development, :test]
 gem 'pg', :group => :production
 
 gem "randumb", "~> 0.3.0"
-gem "twitter", "~> 3.6.0"
+gem "twitter", "~> 4.6.2"
 gem "acts_as_api"
 
 group :development do
   gem 'quiet_assets'
-  gem 'heroku'
   gem 'taps'
 end
 
